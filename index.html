@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        if (location.pathname.endsWith('index.html')) {
+          // build the “folder” URL (or root “/” if at top)
+          const cleanPath = location.pathname.replace(/index\.html$/, '') || '/';
+          // swap the address bar without reloading
+          window.history.replaceState({}, document.title, cleanPath + location.search + location.hash);
+        }
+      </script>
+  <meta charset="UTF-8">
+  <title>Noord Studios</title>
+  <style>
+    html, body, iframe {
+      margin: 0; padding: 0;
+      width: 100%; height: 100%;
+      border: none; overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <iframe
+    src="test-82544c.webflow.io/index.html"
+    allow="fullscreen"
+    sandbox="allow-scripts allow-same-origin"
+  ></iframe>
+</body>
+</html>
