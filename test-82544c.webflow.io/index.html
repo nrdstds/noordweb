@@ -35,6 +35,35 @@
         display: flex;
       }
     }
+    @media screen and (max-width: 767px) {
+    /* 1) Enlarge the phone wrapper */
+    .iphone-holder.holder-iframe {
+      width: 90vw !important;
+      height: auto !important;
+      margin: -20vh 0 auto !important;
+      position: relative !important;
+    }
+    /* 2) Fill the wrapper with the phone image */
+    .iphone-holder .iphone-image {
+      width: 100% !important;
+      height: auto !important;
+    }
+    /* 3) Keep the “screen” overlay aligned */
+    .iphone-holder .iphone-screen {
+      position: absolute !important;
+      top:    4.1% !important;
+      left:   4.6% !important;
+      right:  4.6% !important;
+      bottom: 4.1% !important;
+    }
+    /* 4) Stretch your video container & iframe to full screen */
+    .iphone-holder .video,
+    .iphone-holder .video iframe {
+      width:  100% !important;
+      height: 100% !important;
+    }
+  }
+
   </style>
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
