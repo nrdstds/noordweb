@@ -5100,3 +5100,49 @@ figcaption {
     grid-column: span 2 / span 2;
   }
 }
+
+/* ── make phone & video bigger on small screens ── */
+@media screen and (max-width: 767px) {
+  /* widen the phone wrapper to ~90% of the viewport */
+  .iphone-holder.holder-iframe {
+    width: 60vw;
+    height: auto;       /* let the image scale proportionally */
+    margin: 0 auto;     /* center it */
+    pointer-events: none; /* keep original stacking */
+  }
+
+  /* scale the phone image itself */
+  .iphone-holder .iphone-image {
+    width: 100%;
+    height: auto;
+  }
+
+  /* stretch the inner “screen” to fill the new phone dimensions */
+  .iphone-holder .iphone-screen {
+    position: absolute;
+    top: 4.1%;      /* same as your original padding offsets */
+    left: 4.6%;
+    right: 4.6%;
+    bottom: 4.1%;
+    width: auto;
+    height: auto;
+  }
+
+  /* make the video container fill 100% of that screen box */
+  .iphone-holder .video {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .iphone-holder .video iframe {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  html, body {
+    overflow-x: hidden;          /* no side-to-side scrolling */
+    touch-action: pan-y;         /* only vertical touch pans */
+    overscroll-behavior-x: none; /* no iOS rubber-band sideways bounce */
+  }
+}
